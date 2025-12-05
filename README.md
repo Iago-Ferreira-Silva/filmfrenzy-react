@@ -129,9 +129,10 @@ npm install
 3. Configure o arquivo `.env`:
 
 ```bash
+VITE_API_KEY=api_key=SUA_CHAVE_TMDB
 VITE_API=https://api.themoviedb.org/3/movie/
 VITE_SEARCH=https://api.themoviedb.org/3/search/movie
-VITE_API_KEY=api_key=SUA_CHAVE_TMDB
+VITE_IMG=https://image.tmdb.org/t/p/w500/
 ```
 
 4. Execute o projeto:
