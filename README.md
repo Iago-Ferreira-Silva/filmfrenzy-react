@@ -9,6 +9,7 @@
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
   <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/React%20Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"/>
   <img src="https://img.shields.io/badge/TMDb-01D277?style=for-the-badge&logo=themoviedatabase&logoColor=white"/>
 </p>
 
@@ -25,7 +26,7 @@
   - Duração  
   - Data de lançamento  
 - 🌐 Interface em Português Brasileiro (PT-BR)  
-- 📱 Layout totalmente responsivo  
+- 📱 Layout totalmente responsivo com React Bootstrap  
 - ⚡ Alto desempenho com Vite  
 
 ---
@@ -66,6 +67,7 @@ filmfrenzy-react/
 - `React 19` — Biblioteca para construção da interface.
 - `Vite` — Ferramenta de build e servidor de desenvolvimento.
 - `React Router DOM 7` — Roteamento entre páginas.
+- `React Bootstrap` — Criação de layouts e componentes responsivos.
 - `React Icons` — Ícones em SVG.
 - `TMDb API` — Base de dados de filmes.
 - `ESLint` — Padronização de código.
@@ -79,6 +81,7 @@ filmfrenzy-react/
 - 🔄 Consumo e tratamento dos dados da API externa.
 - 📊 Organização das informações exibidas na página de detalhes.
 - 📱 Ajustes de layout para múltiplos tamanhos de tela.
+- 🎨 Adaptação do layout para componentes do React Bootstrap.
 
 ---
 
@@ -91,6 +94,7 @@ Durante o desenvolvimento, foram aprofundados conhecimentos em:
 - Organização de componentes e páginas.
 - Uso de variáveis de ambiente no Vite.
 - Construção de interfaces responsivas.
+- Utilização prática do React Bootstrap em projetos reais.
 
 ---
 
