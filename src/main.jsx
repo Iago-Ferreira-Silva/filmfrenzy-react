@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import App from "./App";
-import Home from "./pages/Home";
-import Movie from "./pages/Movie";
-import Search from "./pages/Search";
+import App from "./App.jsx";
+import Home from "./pages/Home.jsx";
+import Movie from "./pages/Movie.jsx";
+import Search from "./pages/Search.jsx";
 
 import "./index.css";
 

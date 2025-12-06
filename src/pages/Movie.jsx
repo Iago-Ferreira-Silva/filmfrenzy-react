@@ -7,7 +7,7 @@ import {
   BsFillFileEarmarkTextFill,
 } from "react-icons/bs";
 
-import MovieCard from "../components/MovieCard";
+import MovieCard from "../components/MovieCard.jsx";
 
 import "./Movie.css";
 
