@@ -111,6 +111,14 @@ Endpoints utilizados:
 
 ---
 
+## 🌐 Projeto Online
+
+<p>
+  🔗 <a href="https://filmfrenzy-react-6yb3.vercel.app/" target="_blank"><strong>Acesse o projeto aqui</strong></a>
+</p>
+
+***
+
 ## COMO RODAR LOCALMENTE
 
 1. Clone o repositório:
@@ -170,6 +178,9 @@ npm run preview
 ## 👤 AUTORES
 
 - [Iago Ferreira Silva](https://github.com/Iago-Ferreira-Silva)
+- [Mikael Pereira da Silva](https://github.com/Mikaelpereiradasilva)
+- [Jorge Felipe](https://github.com/jorgefelipe2)
+
 
 ---
 
