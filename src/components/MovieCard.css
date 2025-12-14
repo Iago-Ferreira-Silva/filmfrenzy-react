@@ -31,9 +31,9 @@
 
 .favorite-btn:hover {
   transform: scale(1.15);
-  color: #f43f5e;
+  color: #f7d354;
 }
 
 .favorite-active {
-  color: #f43f5e;
+  color: #f7d354;
 }
