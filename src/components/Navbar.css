@@ -1,36 +1,75 @@
 #navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #121212;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 80px;
+  background: linear-gradient(90deg, #000, #111);
+  border-bottom: 1px solid #222;
 }
 
+/* Logo */
 #navbar h2 a {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
+  color: #f5c518;
+  text-decoration: none;
 }
 
+/* Form de busca */
 #navbar form {
   display: flex;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 8px;
 }
 
 #navbar input {
-  padding: 0.2rem 0.8rem;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 6px;
   border: none;
+  outline: none;
 }
 
-#navbar form button {
-  background-color: #f7d354;
-  border: 2px solid #f7d354;
-  border-radius: 4px;
-  color: #000;
-  padding: 0.3rem;
-  font-size: 1.3rem;
+#navbar button {
+  background-color: #f5c518;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+/* Usuário logado */
+.navbar-user {
   display: flex;
   align-items: center;
+  gap: 12px;
+}
+
+/* Email */
+.navbar-email {
+  max-width: 200px;
+  color: #e5e5e5;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.9;
+}
+
+/* Botão sair */
+.logout-btn {
+  background-color: transparent;
+  border: 1px solid #f5c518;
+  color: #000000;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #f5c518;
+  color: #000;
 }
