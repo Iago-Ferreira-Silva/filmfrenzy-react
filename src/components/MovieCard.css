@@ -1,33 +1,39 @@
+.movie-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: linear-gradient(180deg, #111827, #020617);
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.movie-card img {
+  height: 360px;
+  object-fit: cover;
+}
+
+/* Botão favorito */
 .favorite-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
+  top: 12px;
+  right: 12px;
+  background: rgba(2, 6, 23, 0.85);
   border: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-  color: #ffffff;
-  transition: transform 0.2s ease, color 0.2s ease;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 1.4rem;
+  color: #94a3b8;
+  transition: 0.3s;
 }
 
-/* Favoritado */
+.favorite-btn:hover {
+  transform: scale(1.15);
+  color: #f43f5e;
+}
+
 .favorite-active {
-  color: #f5c518;
-}
-
-/* Animação */
-.favorite-animate {
-  animation: pop 0.3s ease;
-}
-
-@keyframes pop {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.4);
-  }
-  100% {
-    transform: scale(1);
-  }
+  color: #f43f5e;
 }

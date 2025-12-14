@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <Container className="mt-4">
-      <h2 className="mb-4 text-center text-white">Melhores Filmes:</h2>
+      <h2 className="mb-4 text-center fw-bold text-info">Filmes Mais Bem Avaliados:</h2>
 
       {loading && <p className="text-center">Carregando filmes...</p>}
 

@@ -1,20 +1,51 @@
+/* Reset e base */
 * {
-  font-family: Helvetica;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
 }
 
+/* Background global */
 body {
-  background-color: #000;
+  min-height: 100vh;
+  background-color: #020617; /* azul noite profundo */
+  color: #e5e7eb; /* texto claro */
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Links */
 a {
   text-decoration: none;
-  color: #f7d354;
-  transition: 0.5s;
+  color: #38bdf8; /* azul neon suave */
+  transition: color 0.25s ease, opacity 0.25s ease;
 }
 
 a:hover {
-  color: #b8930c;
+  color: #0ea5e9;
+  opacity: 0.9;
+}
+
+/* Scrollbar (opcional, mas deixa premium) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Utilidades */
+.text-muted {
+  color: #94a3b8 !important;
 }

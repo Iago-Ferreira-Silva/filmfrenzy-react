@@ -25,7 +25,7 @@ const MovieCard = ({ movie, showLink = true }) => {
   };
 
   return (
-    <Card className="h-100 shadow-sm position-relative movie-card">
+    <Card className="movie-card h-100 bg-dark text-light border-0">
       {user && (
         <button
           onClick={handleFavorite}
