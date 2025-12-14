@@ -14,6 +14,7 @@ import Movie from "./pages/Movie.jsx";
 import Search from "./pages/Search.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
+import Favorites from "./pages/Favorites.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -35,6 +36,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/" element={<Home />} />
             <Route path="movie/:id" element={<Movie />} />
             <Route path="search" element={<Search />} />
+            <Route path="/favorites" element={<Favorites />} />
           </Route>
         </Routes>
       </BrowserRouter>

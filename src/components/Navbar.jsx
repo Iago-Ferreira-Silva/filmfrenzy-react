@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi";
 import AuthContext from "../context/AuthContext";
@@ -6,9 +6,10 @@ import AuthContext from "../context/AuthContext";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { user, logout } = useContext(AuthContext);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
+
+  const { user, logout } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,11 +18,6 @@ const Navbar = () => {
 
     navigate(`/search?q=${search}`, { replace: true });
     setSearch("");
-  };
-
-  const handleLogout = () => {
-    logout();
-    navigate("/login");
   };
 
   return (
@@ -47,11 +43,16 @@ const Navbar = () => {
         </form>
       )}
 
-      {/* Área de autenticação */}
+      {/* Área do usuário */}
       {user && (
         <div className="navbar-user">
+          <Link to="/favorites" className="navbar-link">
+            Favoritos
+          </Link>
+
           <span className="navbar-email">{user.email}</span>
-          <button className="logout-btn" onClick={handleLogout}>
+
+          <button className="logout-btn" onClick={logout}>
             Sair
           </button>
         </div>
