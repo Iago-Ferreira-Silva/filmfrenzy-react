@@ -1,40 +1,39 @@
 import { Link } from "react-router-dom";
 import { FaStar, FaRegStar } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import AuthContext from "../context/AuthContext";
 
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
+import "./MovieCard.css";
+
 const imagesURL = import.meta.env.VITE_IMG;
 
 const MovieCard = ({ movie, showLink = true }) => {
   const { user, toggleFavorite, isFavorite } = useContext(AuthContext);
+  const [animate, setAnimate] = useState(false);
 
   const favorite = isFavorite(movie.id);
 
+  const handleFavorite = () => {
+    toggleFavorite(movie);
+    setAnimate(true);
+
+    setTimeout(() => setAnimate(false), 300);
+  };
+
   return (
-    <Card className="h-100 shadow-sm position-relative">
-      {/* Favorito */}
+    <Card className="h-100 shadow-sm position-relative movie-card">
       {user && (
         <button
-          onClick={() => toggleFavorite(movie)}
-          style={{
-            position: "absolute",
-            top: "10px",
-            right: "10px",
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            fontSize: "1.4rem",
-          }}
+          onClick={handleFavorite}
+          className={`favorite-btn ${
+            favorite ? "favorite-active" : ""
+          } ${animate ? "favorite-animate" : ""}`}
         >
-          {favorite ? (
-            <FaStar color="#f5c518" />
-          ) : (
-            <FaRegStar color="#fff" />
-          )}
+          {favorite ? <FaStar /> : <FaRegStar />}
         </button>
       )}
 

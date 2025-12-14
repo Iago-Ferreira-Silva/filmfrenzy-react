@@ -29,8 +29,6 @@ const Favorites = () => {
           <Col key={movie.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
             <MovieCard
               movie={movie}
-              showLink={false}
-              toggleFavorite={toggleFavorite} // Passando função de favoritar
             />
           </Col>
         ))}

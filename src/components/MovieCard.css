@@ -1,0 +1,33 @@
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #ffffff;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Favoritado */
+.favorite-active {
+  color: #f5c518;
+}
+
+/* Animação */
+.favorite-animate {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
