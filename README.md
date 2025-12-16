@@ -1,7 +1,7 @@
 # 🎬 Film Frenzy
 
 <p align="center">
-  Aplicação web moderna para <strong>descobrir, pesquisar e explorar filmes</strong> com informações detalhadas, utilizando a API do <strong>The Movie Database (TMDb)</strong>.<br/>
+  Aplicação web moderna para <strong>descobrir, pesquisar e gerenciar filmes</strong>, com sistema de autenticação e favoritos, utilizando a API do <strong>The Movie Database (TMDb)</strong>.<br/>
   Desenvolvida com <code>React</code>, <code>Vite</code> e <code>JavaScript</code>.
 </p>
 
@@ -19,14 +19,17 @@
 
 - 🎯 Exibição dos filmes mais bem avaliados do TMDb  
 - 🔍 Busca de filmes por título  
-- 📊 Página de detalhes com:
+- 📊 Página de detalhes do filme com:
   - Sinopse  
   - Avaliação  
   - Orçamento e receita  
   - Duração  
   - Data de lançamento  
+- ⭐ Sistema de favoritos por usuário  
+- 🔐 Autenticação (Login e Cadastro)  
+- 🔒 Proteção de rotas privadas  
 - 🌐 Interface em Português Brasileiro (PT-BR)  
-- 📱 Layout totalmente responsivo com React Bootstrap  
+- 📱 Layout totalmente responsivo  
 - ⚡ Alto desempenho com Vite  
 
 ---
@@ -36,27 +39,37 @@
 ```bash
 filmfrenzy-react/
 ├── public/
-│   └── film.svg
 ├── src/
 │   ├── components/
 │   │   ├── MovieCard.jsx
+│   │   ├── MovieCard.css
 │   │   ├── Navbar.jsx
 │   │   └── Navbar.css
+│   ├── context/
+│   │   └── AuthContext.jsx
 │   ├── pages/
 │   │   ├── Home.jsx
 │   │   ├── Movie.jsx
 │   │   ├── Movie.css
-│   │   ├── Search.jsx
-│   │   └── MoviesGrid.css
+│   │   ├── Favorites.jsx
+│   │   ├── Favorites.css
+│   │   ├── Login.jsx
+│   │   ├── Register.jsx
+│   │   ├── Auth.css
+│   │   └── Search.jsx
+│   ├── routes/
+│   │   └── PrivateRoute.jsx
 │   ├── App.jsx
 │   ├── App.css
 │   ├── index.css
 │   └── main.jsx
 ├── .env
+├── .gitignore
 ├── eslint.config.js
-├── vite.config.js
 ├── index.html
+├── package-lock.json
 ├── package.json
+├── vite.config.js
 └── README.md
 ```
 
@@ -64,37 +77,59 @@ filmfrenzy-react/
 
 ## 🛠️ PRINCIPAIS TECNOLOGIAS UTILIZADAS
 
-- `React 19` — Biblioteca para construção da interface.
-- `Vite` — Ferramenta de build e servidor de desenvolvimento.
-- `React Router DOM 7` — Roteamento entre páginas.
-- `React Bootstrap` — Criação de layouts e componentes responsivos.
-- `React Icons` — Ícones em SVG.
-- `TMDb API` — Base de dados de filmes.
-- `ESLint` — Padronização de código.
-- `CSS3` — Estilização e responsividade.
+- `React 19` — Biblioteca para construção da interface
+- `Vite` — Ferramenta de build e servidor de desenvolvimento
+- `React Router DOM 7` — Roteamento entre páginas
+- `Context API` — Gerenciamento global de autenticação e favoritos
+- `React Bootstrap` — Criação de layouts e componentes responsivos
+- `React Icons` — Ícones em SVG
+- `TMDb API` — Base de dados de filmes
+- `LocalStorage` — Persistência de sessão e favoritos
+- `ESLint` — Padronização de código
+- `CSS3` — Estilização e responsividade
+
+---
+
+## 🔐 AUTENTICAÇÃO E SEGURANÇA
+
+- Sistema de login e cadastro de usuários
+- Controle de sessão via Context API
+- Rotas privadas protegidas com `PrivateRoute`
+- Favoritos associados ao usuário autenticado
+- Dados armazenados no LocalStorage
+- Variáveis sensíveis protegidas via `.env`
 
 ---
 
 ## 🚧 DIFICULDADES ENCONTRADAS
 
-- 🔐 Configuração segura das variáveis de ambiente.
-- 🔄 Consumo e tratamento dos dados da API externa.
-- 📊 Organização das informações exibidas na página de detalhes.
-- 📱 Ajustes de layout para múltiplos tamanhos de tela.
-- 🎨 Adaptação do layout para componentes do React Bootstrap.
+Durante o desenvolvimento do projeto, algumas dificuldades foram enfrentadas, contribuindo significativamente para o aprendizado:
+
+- 🔐 Implementação do sistema de autenticação no front-end sem back-end dedicado, utilizando Context API e LocalStorage
+- 🔄 Gerenciamento de estado global para controle de sessão do usuário e lista de filmes favoritados
+- ⭐ Implementação da funcionalidade de favoritos de forma persistente por usuário
+- 🔒 Proteção de rotas privadas, garantindo acesso apenas a usuários autenticados
+- 🌐 Consumo e tratamento de dados da API externa do TMDb
+- 📊 Organização e exibição adequada das informações na página de detalhes do filme
+- 📱 Ajustes de responsividade para diferentes tamanhos de tela, especialmente dispositivos móveis
+- 🎨 Integração e customização de componentes do React Bootstrap com CSS personalizado
+- 🚀 Configuração de variáveis de ambiente e deploy da aplicação na plataforma Vercel
+
+Esses desafios permitiram aplicar conceitos teóricos na prática e aprimorar a qualidade do projeto
 
 ---
 
 ## 🧠 APRENDIZADOS
 
-Durante o desenvolvimento, foram aprofundados conhecimentos em:
+Durante o desenvolvimento do projeto, foram aprofundados conhecimentos em:
 
-- Integração com APIs REST.
-- Gerenciamento de rotas com React Router.
-- Organização de componentes e páginas.
-- Uso de variáveis de ambiente no Vite.
-- Construção de interfaces responsivas.
-- Utilização prática do React Bootstrap em projetos reais.
+- Consumo de APIs REST
+- Gerenciamento de estado global
+- Autenticação no front-end
+- Proteção de rotas
+- Organização de projetos React
+- Design responsivo
+- Deploy com Vercel
 
 ---
 
@@ -185,6 +220,6 @@ npm run preview
 ---
 
 ## 📌 STATUS DO PROJETO:
-![Badge Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=yellow&style=for-the-badge)
+![Badge Concluído](https://img.shields.io/static/v1?label=STATUS&message=CONCLU%C3%8DDO&color=brightgreen&style=for-the-badge)
 
 ---
