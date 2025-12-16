@@ -1,14 +1,17 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi";
+import AuthContext from "../context/AuthContext";
+
 import {
-  Navbar as BsNavbar,
-  Nav,
+  Navbar as BootstrapNavbar,
   Container,
+  Nav,
   Form,
   Button,
 } from "react-bootstrap";
-import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi";
-import AuthContext from "../context/AuthContext";
+
+import "./Navbar.css";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
@@ -18,62 +21,59 @@ const Navbar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!search) return;
-    navigate(`/search?q=${search}`);
+    navigate(`/search?q=${search}`, { replace: true });
     setSearch("");
   };
 
   return (
-    <BsNavbar bg="dark" expand="lg" className="shadow-lg border-bottom border-secondary">
+    <BootstrapNavbar expand="lg" variant="dark" className="navbar-custom">
       <Container>
-        <BsNavbar.Brand
-          as={Link}
-          to="/"
-          className="fw-bold text-info d-flex align-items-center gap-2"
-        >
-          <BiCameraMovie size={22} />
-          Film Frenzy
-        </BsNavbar.Brand>
+        <BootstrapNavbar.Brand as={Link} to="/">
+          <BiCameraMovie size={24} /> Film Frenzy
+        </BootstrapNavbar.Brand>
 
-        <BsNavbar.Toggle />
+        {/* Botão hamburguer */}
+        <BootstrapNavbar.Toggle aria-controls="navbar-content" />
 
-        <BsNavbar.Collapse>
+        <BootstrapNavbar.Collapse id="navbar-content">
           {user && (
-            <Form className="d-flex mx-auto" onSubmit={handleSubmit}>
+            <Form
+              className="d-flex mx-lg-auto my-3 my-lg-0 navbar-search"
+              onSubmit={handleSubmit}
+            >
               <Form.Control
-                type="search"
-                placeholder="Buscar filme..."
-                className="me-2 bg-dark text-light border-secondary"
+                type="text"
+                placeholder="Buscar filme"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <Button variant="info" type="submit">
+              <Button type="submit">
                 <BiSearchAlt2 />
               </Button>
             </Form>
           )}
 
           {user && (
-            <Nav className="ms-auto align-items-center gap-3">
-              <Nav.Link as={Link} to="/favorites" className="text-light">
+            <Nav className="ms-lg-auto text-center">
+              <Nav.Link as={Link} to="/favorites">
                 Favoritos
               </Nav.Link>
 
-              <span className="text-secondary small">
-                {user.email}
-              </span>
+              <span className="navbar-email">{user.email}</span>
 
               <Button
                 variant="outline-info"
                 size="sm"
+                className="mt-2 mt-lg-0 ms-lg-3"
                 onClick={logout}
               >
                 Sair
               </Button>
             </Nav>
           )}
-        </BsNavbar.Collapse>
+        </BootstrapNavbar.Collapse>
       </Container>
-    </BsNavbar>
+    </BootstrapNavbar>
   );
 };
 

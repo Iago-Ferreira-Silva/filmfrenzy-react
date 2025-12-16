@@ -1,75 +1,118 @@
-#navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 30px;
-  height: 80px;
-  background: linear-gradient(90deg, #000, #111);
-  border-bottom: 1px solid #222;
+/*NAVBAR BASE*/
+.navbar-custom {
+  background: linear-gradient(90deg, #0f172a, #020617);
+  border-bottom: 1px solid #1e293b;
+  padding: 0.5rem 0;
 }
 
-/* Logo */
-#navbar h2 a {
+/*LOGO*/
+.navbar-brand {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #f5c518;
-  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #38bdf8 !important;
+  transition: opacity 0.3s ease;
 }
 
-/* Form de busca */
-#navbar form {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.navbar-brand:hover {
+  opacity: 0.85;
 }
 
-#navbar input {
-  padding: 8px 12px;
-  border-radius: 6px;
+/*TOGGLE (HAMBURGUER)*/
+.navbar-toggler {
   border: none;
   outline: none;
 }
 
-#navbar button {
-  background-color: #f5c518;
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/*SEARCH*/
+.navbar-search {
+  max-width: 420px;
+  width: 100%;
+}
+
+.navbar-search input {
+  border-radius: 10px 0 0 10px;
   border: none;
-  border-radius: 6px;
-  padding: 8px 10px;
-  cursor: pointer;
+  padding: 8px 12px;
 }
 
-/* Usuário logado */
-.navbar-user {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.navbar-search input:focus {
+  box-shadow: none;
 }
 
-/* Email */
-.navbar-email {
-  max-width: 200px;
-  color: #e5e5e5;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  opacity: 0.9;
-}
-
-/* Botão sair */
-.logout-btn {
-  background-color: transparent;
-  border: 1px solid #f5c518;
-  color: #000000;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
+.navbar-search button {
+  border-radius: 0 10px 10px 0;
+  background-color: #38bdf8;
+  border: none;
+  color: #020617;
+  padding: 8px 14px;
   transition: 0.3s;
 }
 
-.logout-btn:hover {
-  background-color: #f5c518;
-  color: #000;
+.navbar-search button:hover {
+  background-color: #0ea5e9;
+}
+
+/*USER AREA*/
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  color: #e5e7eb !important;
+  font-weight: 500;
+  margin-right: 8px;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #38bdf8 !important;
+}
+
+/*EMAIL*/
+.navbar-email {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*LOGOUT BUTTON*/
+.btn-outline-info {
+  border-color: #38bdf8;
+  color: #38bdf8;
+  transition: 0.3s;
+}
+
+.btn-outline-info:hover {
+  background-color: #38bdf8;
+  color: #020617;
+}
+
+/*MOBILE ADJUSTMENTS*/
+@media (max-width: 991px) {
+  .navbar-search {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-email {
+    margin: 12px 0;
+  }
+
+  .btn-outline-info {
+    width: 100%;
+  }
 }
